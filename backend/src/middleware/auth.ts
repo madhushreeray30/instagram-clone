@@ -5,6 +5,10 @@ import logger from '../utils/logger';
 export interface AuthRequest extends Request {
   userId?: string;
   email?: string;
+  params?: any;
+  body?: any;
+  query?: any;
+  headers?: any;
 }
 
 export function authenticateToken(req: AuthRequest, res: Response, next: NextFunction) {
