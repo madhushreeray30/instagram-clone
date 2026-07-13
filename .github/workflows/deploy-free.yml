@@ -1,0 +1,25 @@
+name: Deploy to Render & Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Trigger Render Deployment
+        if: success()
+        run: |
+          if [ -n "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+            curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+          fi
+
+      - name: Notify
+        run: |
+          echo "✅ Deployment triggered!"
+          echo "Frontend: Check Vercel dashboard"
+          echo "Backend: Check Render dashboard"

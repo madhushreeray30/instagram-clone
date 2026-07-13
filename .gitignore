@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.npm
+.yarn
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist/
+build/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+.cache/
+.next/
+out/
+
+# Database
+*.sql
+dumps/
+
+# Uploads
+uploads/
+public/uploads/
+
+# OS
+Thumbs.db
